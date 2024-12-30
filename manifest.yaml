@@ -1,0 +1,3 @@
+processes:
+  web: echo "Hello, world!"
+  worker: echo "Hello, worker!"

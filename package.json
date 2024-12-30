@@ -1,0 +1,29 @@
+{
+  "name": "zeno",
+  "description": "Process runner with some plugin sugar.",
+  "version": "0.0.1",
+  "module": "src/index.ts",
+  "bin": {
+    "zeno": "./dist/zeno"
+  },
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "dev": "bun --hot src/index.ts",
+    "compile": "bun build src/index.ts --compile --outfile ./dist/zeno",
+    "release": "bun run clean && bun run compile",
+    "package": "bun build src/index.ts --outdir dist && bun pack dist"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/jest": "^29.5.14",
+    "@types/js-yaml": "^4.0.9"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "yaml": "^2.6.1"
+  }
+}
