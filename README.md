@@ -68,18 +68,6 @@ To build Zeno locally:
 bun run build
 ```
 
-### Package for Distribution
-To create an NPM package:
-```bash
-bun run package
-```
-
-### Publish to NPM
-To publish Zeno to NPM:
-```bash
-npm publish dist
-```
-
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
 
