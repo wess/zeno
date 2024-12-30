@@ -1,7 +1,7 @@
 
 # Zeno
 
-Zeno is a Foreman clone built with Bun and TypeScript, designed to manage Procfile-based applications efficiently.
+Zeno is a Foreman style utility with plugin support with Bun and TypeScript.
 
 ## Features
 - Supports Procfile-like configuration using `manifest.yaml`
