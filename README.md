@@ -14,7 +14,7 @@ Zeno is a Foreman style utility with plugin support with Bun and TypeScript.
 To install Zeno, run the following command in your terminal:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/your-username/zeno/main/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/wess/zeno/main/install.sh)"
 ```
 
 This will:
