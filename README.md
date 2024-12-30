@@ -1,36 +1,87 @@
+
 # Zeno
 
-## Prerequisites
+Zeno is a Foreman clone built with Bun and TypeScript, designed to manage Procfile-based applications efficiently.
 
-- Ensure you have [Bun](https://bun.sh) installed. You can install it by following the instructions on the Bun website.
+## Features
+- Supports Procfile-like configuration using `manifest.yaml`
+- Handles built-in commands such as `start`, `check`, `run`, and more
+- Extensible through a robust plugin system
+- Lightweight and blazing fast using Bun
 
 ## Installation
 
-To install dependencies, run the following command:
+To install Zeno, run the following command in your terminal:
 
 ```bash
-bun install
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/your-username/zeno/main/install.sh)"
 ```
 
-## Running the Project
-
-To start the project, use the following command:
-
-```bash
-zeno
-```
+This will:
+1. Detect your platform and architecture.
+2. Download the latest Zeno binary.
+3. Install it to `/usr/local/bin`.
 
 ## Usage
 
-Zeno provides several commands to help you manage your project. Here are some of the key commands:
+### Available Commands
+```bash
+zeno start           # Start the application
+zeno check           # Validate your application's manifest.yaml
+zeno run <command>   # Run a custom command
+zeno help            # Display help information
+zeno version         # Display Zeno version
+```
 
-- **Start**: To start the application, use `zeno start`.
-- **Check**: To perform checks, use `zeno check`.
-- **Export**: To export data, use `zeno export`.
-- **Help**: For help on commands, use `zeno help`.
+### Plugins
+Zeno supports an extensible plugin system. To use plugins:
+1. Add a `plugins` section to your `manifest.yaml`:
+   ```yaml
+   plugins:
+     directory: .zeno/plugins
+   ```
+2. Place your plugin files in the specified directory.
 
-## Additional Information
+### Example Plugin
+Create a plugin file `.zeno/plugins/hello-plugin.js`:
+```javascript
+export const name = "Hello Plugin";
+export const description = "Responds to the 'hello' command";
 
-This project was created using `bun init` in bun v1.1.30. Bun is a fast all-in-one JavaScript runtime.
+export function onCommand(command, args) {
+  if (command === "hello") {
+    console.log("Hello from the plugin!");
+  }
+}
+```
 
-For more information, visit the [Bun website](https://bun.sh).
+Run the command:
+```bash
+zeno hello
+```
+
+## Development
+
+### Build Zeno
+To build Zeno locally:
+```bash
+bun run build
+```
+
+### Package for Distribution
+To create an NPM package:
+```bash
+bun run package
+```
+
+### Publish to NPM
+To publish Zeno to NPM:
+```bash
+npm publish dist
+```
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+MIT
