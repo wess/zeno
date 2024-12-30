@@ -11,8 +11,9 @@
     "clean": "rm -rf dist",
     "dev": "bun --hot src/index.ts",
     "compile": "bun build src/index.ts --compile --outfile ./dist/zeno",
-    "release": "bun run clean && bun run compile",
-    "package": "bun build src/index.ts --outdir dist && bun pack dist"
+    "package": "bun build src/index.ts --outdir dist && bun pack dist",
+    "release": "bun run bump-version && git push --follow-tags && bunx open-cli https://github.com/your-username/zeno/releases/new",
+    "bump-version": "bun version patch"
   },
   "devDependencies": {
     "@types/bun": "latest",
