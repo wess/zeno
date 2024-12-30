@@ -2,7 +2,7 @@
 
 set -e
 
-REPO="your-username/zeno" # Replace with your GitHub repository
+REPO="wess/zeno" # Replace with your GitHub repository
 INSTALL_DIR="/usr/local/bin" # Directory where Zeno will be installed
 
 echo "Installing Zeno..."
